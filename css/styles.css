@@ -1,0 +1,65 @@
+/* Load your Quincento OTF font */
+@font-face {
+  font-family: 'Quincento';
+  src: url('../resources/fonts/quincento.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #fff;
+  --text: #333;
+  --font: 'Quincento', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* horizontal centering */
+  height: 100vh;
+  margin: 0;
+  font-family: var(--font);
+  text-align: center;
+}
+
+.container {
+  display: flex;           
+  flex-direction: column;  
+  align-items: center;     /* THIS centers logo & text */
+  width: 100%;
+  max-width: clamp(200px, 40vw, 500px);
+  padding: 0 1rem;
+}
+
+.logo {
+  /* your existing size rule */
+  width: clamp(200px, 40vw, 500px);
+  height: auto;
+
+  /* margin-auto no longer needed for centering, but keep bottom spacing */
+  margin-bottom: 2rem;
+}
+
+.headline {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.address {
+  font-style: normal;
+  font-size: clamp(2rem, 5vw, 1.25rem);
+  line-height: 1.4;
+  opacity: 0.8;
+}
